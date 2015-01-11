@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]; then
+  echo "usage: $0 pattern dir"
+else
+  grep "$1" -R -I "$2" 2>/dev/null
+fi
+
+exit
+

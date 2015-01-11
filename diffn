@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$#" != 2 ]; then
+  echo "Usage:" "$0" "fileA fileB"
+  exit 1
+else
+  diff --side-by-side "$1" "$2" | pager
+fi
+

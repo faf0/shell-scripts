@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$#" -lt 1 ]; then
+  echo "missing program name"
+  exit 1
+elif [ -z "$(which "$1")" ]; then
+  echo "$1 not found"
+  exit 1
+fi
+
+"$@" > /dev/null 2>&1 &
+

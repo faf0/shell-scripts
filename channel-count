@@ -1,0 +1,4 @@
+#!/bin/bash
+
+iwlist wlan0 scan | sed -n 's/^.*(Channel \([0-9]*\)).*/\1/p' | sort | uniq -c | sort -n | awk '{ print "Count\t",$1,"\tChannel\t",$2; }'
+
